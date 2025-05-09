@@ -1,0 +1,51 @@
+@use "variable" as *;
+@use "svg" as *;
+
+.containerContact {
+    padding: 8em 2em 5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    article {
+        max-width: 96rem;
+        display: flex;
+        flex-direction: column;
+        p {
+            padding-inline: 5em;
+            font-size: FZ(16);
+            letter-spacing: 0.12em;
+            line-height: 1.8em;
+        }
+        a {
+            position: relative;
+            margin-top: 3em;
+            font-size: FZ(18);
+            background-color: $baseBlack;
+            color: $baseWhite;
+            display: grid;
+            place-content: center;
+            padding-block: 1em;
+            letter-spacing: 0.2em;
+            transition: 0.3s ease-out;
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 3px;
+                background-color: $baseBlack;
+                clip-path: inset(0 50% 0 50%);
+                transition: 0.3s ease-out;
+            }
+            @include hover {
+                background-color: #fff;
+                color: $baseBlack;
+                &::after {
+                    clip-path: inset(0);
+                    transition-delay: 0.1s;
+                }
+            }
+        }
+    }
+}

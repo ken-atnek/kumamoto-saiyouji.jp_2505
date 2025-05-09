@@ -1,0 +1,137 @@
+@use "variable" as *;
+@use "svg" as *;
+
+.containerMusubu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .blockHead {
+        width: 100%;
+        font-size: inherit;
+        display: flex;
+        justify-content: center;
+        background: url(../assets/images/musubu-tsunagu/head.webp) no-repeat
+            center center / cover;
+        padding-block: 3em;
+        h3 {
+            font-size: FZ(30);
+            display: flex;
+            flex-direction: column;
+            gap: 0.2em 0;
+            writing-mode: vertical-rl; //縦書き
+            text-orientation: upright; //縦書き英数回転
+            font-feature-settings: initial; //左詰め解除
+            color: $baseWhite;
+            letter-spacing: 0.058em;
+        }
+    }
+    .h2Sidebar {
+        font-size: FZ(16);
+        margin-top: 3em;
+        max-width: 70rem;
+        letter-spacing: 0.12em;
+        line-height: 1.8em;
+        text-align: justify;
+    }
+    .boxImageList {
+        max-width: $articleMaxWidth;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        font-size: inherit;
+        margin-top: 3em;
+        padding-bottom: 2em;
+        gap: 0 3em;
+        margin-inline: 2em;
+        img {
+            aspect-ratio: 1.33;
+            object-fit: cover;
+        }
+    }
+    .blockMiddle {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 8em 2em 8em;
+        h3 {
+            font-size: FZ(30);
+            letter-spacing: 0.12em;
+        }
+        .workList {
+            position: relative;
+            font-size: inherit;
+            display: flex;
+            flex-direction: column;
+            max-width: 76rem;
+            margin-top: 3em;
+            gap: 5em 0;
+            li {
+                font-size: inherit;
+                display: flex;
+                gap: 0 2em;
+                &:nth-of-type(2n) {
+                    flex-direction: row-reverse;
+                }
+                figure {
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    font-size: inherit;
+                    align-items: center;
+                    gap: 1em 0;
+                    width: 50%;
+                    .itemImage {
+                        aspect-ratio: 1.5;
+                        object-fit: cover;
+                    }
+                    figcaption {
+                        font-size: FZ(20);
+                    }
+                }
+                p {
+                    flex: 1;
+                    font-size: FZ(15);
+                    text-align: justify;
+                    letter-spacing: 0.08em;
+                    line-height: 1.6em;
+                }
+            }
+        }
+        .staffList {
+            position: relative;
+            font-size: inherit;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 5em 0;
+            max-width: $articleMaxWidth;
+            margin-top: 8em;
+            li {
+                font-size: inherit;
+                display: grid;
+                grid-column: span 2;
+                grid-template-columns: subgrid;
+                gap: 2em 2em;
+                .itemName {
+                    grid-column: span 2;
+                    text-align: center;
+                    font-size: FZ(20);
+                    letter-spacing: 0.08em;
+                }
+                .itemImage {
+                    width: 30rem;
+                    img {
+                        width: 100%;
+                        aspect-ratio: 1;
+                        object-fit: cover;
+                    }
+                }
+                p {
+                    flex: 1;
+                    font-size: FZ(15);
+                    text-align: justify;
+                    letter-spacing: 0.12em;
+                    line-height: 1.8em;
+                }
+            }
+        }
+    }
+}

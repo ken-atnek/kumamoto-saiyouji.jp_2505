@@ -10,7 +10,9 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import imageLogo from '@/assets/images/common/logo.webp';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 const Header = () => {
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -43,6 +45,7 @@ const Header = () => {
     };
 
     document.addEventListener('click', handleOutsideClick);
+
     return () => {
       document.removeEventListener('click', handleOutsideClick);
     };
@@ -53,23 +56,31 @@ const Header = () => {
       <h1>
         <Image src={imageLogo} alt="西養寺" />
       </h1>
-        <nav>
-          <Link href="/" className={styles.itemLink} onClick={closeMenu}>
-            ホーム
-          </Link>
-          <Link href="#" className={styles.itemLink} onClick={closeMenu}>
-            結ぶ・紡ぐ
-          </Link>
-          <Link href="#" className={styles.itemLink} onClick={closeMenu}>
-            お寺選び
-          </Link>
-          <Link href="#" className={styles.itemLink} onClick={closeMenu}>
-            納骨堂 無量寿堂
-          </Link>
-          <Link href="#" className={styles.itemLink} onClick={closeMenu}>
-            お問い合わせ
-          </Link>
-        </nav>
+      <nav>
+        <Link href="/" className={styles.itemLink} onClick={closeMenu}>
+          ホーム
+        </Link>
+        <Link
+          href="/musubu-tsunagu/"
+          className={`${styles.itemLink} ${pathname === '/musubu-tsunagu/' ? styles['is-active'] : ''}`}
+          onClick={closeMenu}
+        >
+          結ぶ・紡ぐ
+        </Link>
+        <Link href="#" className={styles.itemLink} onClick={closeMenu}>
+          お寺選び
+        </Link>
+        <Link href="#" className={styles.itemLink} onClick={closeMenu}>
+          納骨堂 無量寿堂
+        </Link>
+        <Link
+          href="/contact/"
+          className={`${styles.itemLink} ${pathname === '/contact/' ? styles['is-active'] : ''}`}
+          onClick={closeMenu}
+        >
+          お問い合わせ
+        </Link>
+      </nav>
       <button
         className={`${styles.hamburgerButton} ${
           isOpen ? styles['is-open'] : ''

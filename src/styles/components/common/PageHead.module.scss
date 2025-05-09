@@ -1,0 +1,48 @@
+@use "variable" as *;
+@use "svg" as *;
+.containerPageHead {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 9rem 3rem 3rem;
+    article {
+        display: flex;
+        align-items: center;
+        height: 23rem;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        padding-inline: 2em;
+        justify-content: center;
+        h2 {
+            font-size: FZ(36);
+            color: $baseWhite;
+            width: 100%;
+            display: flex;
+            max-width: $articleMaxWidth;
+            padding-top: 1.4em;
+        }
+    }
+    .breadcrumb {
+        width: 100%;
+        max-width: $articleMaxWidth;
+        font-size: inherit;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-top: 1em;
+        .itemLink {
+            font-size: FZ(14);
+            letter-spacing: 0.12em;
+            text-decoration: underline 1px;
+        }
+        span {
+            font-size: FZ(14);
+            letter-spacing: 0.12em;
+            &::before {
+                content: "|";
+                margin-inline: 0.5em;
+            }
+        }
+    }
+}

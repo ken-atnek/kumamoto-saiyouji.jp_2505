@@ -41,6 +41,10 @@
             font-feature-settings: initial; //左詰め解除
             padding-block: 0.5em;
             text-align: center;
+            &.is-active {
+                background-color: $baseBlack;
+                color: #fff;
+            }
         }
     }
 }
