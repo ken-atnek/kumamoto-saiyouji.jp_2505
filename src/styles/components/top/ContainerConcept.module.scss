@@ -1,0 +1,70 @@
+@use "variable" as *;
+@use "svg" as *;
+
+.containerConcept {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $baseLightGray;
+    padding: 3em 2em 4em;
+    article {
+        max-width: $articleMaxWidth;
+        & > ul {
+            display: flex;
+            flex-direction: column;
+            font-size: inherit;
+            gap: 3em 0;
+            & > li {
+                grid-column: span 2;
+                display: flex;
+                font-size: inherit;
+                gap: 0 2em;
+                &:nth-of-type(2n) {
+                    flex-direction: row-reverse;
+                }
+                .wrapImage {
+                    width: 48%;
+                    img {
+                        aspect-ratio: 1.3;
+                        object-fit: cover;
+                    }
+                }
+                .wrapText {
+                    flex: 1;
+                    font-size: inherit;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    padding-top: 5em;
+                    gap: 3em 0;
+                    h3 {
+                        font-size: FZ(28);
+                        letter-spacing: 0.08em;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                    }
+                    p {
+                        font-size: FZ(16);
+                        letter-spacing: 0.12em;
+                        line-height: 1.6em;
+                        text-align: justify;
+                    }
+                    .itemLink {
+                        font-size: FZ(14);
+                        border: 1px solid $baseBlack;
+                        padding: 0.3em 1em;
+                        transition: 0.3s ease-out;
+                        margin-top: 2em;
+                        @include pc {
+                            &:hover {
+                                background-color: $baseBlack;
+                                color: $baseWhite;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

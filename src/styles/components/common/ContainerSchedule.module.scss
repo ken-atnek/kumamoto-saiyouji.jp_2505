@@ -1,0 +1,40 @@
+@use "variable" as *;
+@use "svg" as *;
+
+.containerSchedule {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $baseLightGray;
+    padding: 5em 2em 8em;
+    h2 {
+        font-size: FZ(20);
+        letter-spacing: 0.08em;
+    }
+    .listSchedule {
+        position: relative;
+        max-width: $articleMaxWidth;
+        font-size: inherit;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3em 2em;
+        margin-top: 5em;
+        li {
+            font-size: inherit;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5em 0;
+            .boxImage {
+                img {
+                    aspect-ratio: 1.5;
+                    object-fit: cover;
+                }
+            }
+            span {
+                font-size: FZ(14);
+                letter-spacing: 0.08em;
+            }
+        }
+    }
+}
