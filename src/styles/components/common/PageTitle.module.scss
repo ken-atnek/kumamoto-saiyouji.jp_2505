@@ -4,10 +4,12 @@
     display: flex;
     justify-content: center;
     padding: 8em 2em 5em;
+    @include sp {
+        padding: 10vw 4vw 6vw;
+    }
     article {
         max-width: $articleMaxWidth;
         display: flex;
-
         div {
             font-size: inherit;
             display: flex;
@@ -20,7 +22,7 @@
                     font-size: FZ(24);
                 }
             }
-            span {
+            & > span {
                 position: relative;
                 font-size: FZ(16);
                 letter-spacing: 0.2em;

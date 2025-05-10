@@ -1,12 +1,14 @@
 @use "variable" as *;
 @use "svg" as *;
-
 .containerSchedule {
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: $baseLightGray;
     padding: 5em 2em 8em;
+    @include sp {
+        padding: 6vw 4vw;
+    }
     h2 {
         font-size: FZ(20);
         letter-spacing: 0.08em;
@@ -19,6 +21,11 @@
         grid-template-columns: repeat(3, 1fr);
         gap: 3em 2em;
         margin-top: 5em;
+        @include sp {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4vw 2vw;
+            margin-top: 4vw;
+        }
         li {
             font-size: inherit;
             display: flex;

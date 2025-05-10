@@ -1,0 +1,325 @@
+@use "variable" as *;
+@use "svg" as *;
+/* stylelint-disable no-descending-specificity */
+.containerPageTitle {
+    article {
+        div {
+            h2 {
+                font-size: FZ(18);
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+}
+.containerNoukotsudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 8em;
+    padding-inline: 2em;
+    @include sp {
+        padding: 6vw 4vw 10vw;
+    }
+    article {
+        display: flex;
+        flex-direction: column;
+        max-width: $articleMaxWidth;
+    }
+    .blockHead {
+        .wrapComment {
+            font-size: inherit;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            p {
+                font-size: FZ(16);
+                letter-spacing: 0.12em;
+                line-height: 1.8em;
+                margin-bottom: 2em;
+                @include sp {
+                    text-align: justify;
+                    margin-top: 4vw;
+                }
+            }
+            span {
+                line-height: 2em;
+            }
+        }
+    }
+    ul {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 1.5fr auto;
+        font-size: inherit;
+        width: 100%;
+        max-width: $articleMaxWidth;
+        margin-top: 8em;
+        gap: 4em 0;
+        @include sp {
+            grid-template-columns: unset;
+            grid-auto-flow: row;
+        }
+        li {
+            position: relative;
+            font-size: inherit;
+            grid-column: span 3;
+            display: grid;
+            grid-template-columns: subgrid;
+            @include sp {
+                grid-column: unset;
+                grid-template-columns: unset;
+                grid-auto-flow: row;
+            }
+            .itemImage {
+                display: grid;
+                place-content: center;
+                @include sp {
+                    width: 40vw;
+                    justify-self: center;
+                    margin-bottom: 6vw;
+                }
+            }
+            figure {
+                position: relative;
+                font-size: inherit;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                figcaption {
+                    font-size: FZ(14);
+                }
+            }
+            .wrapText {
+                font-size: inherit;
+                display: flex;
+                flex-direction: column;
+                max-width: 20em;
+                margin-top: 2em;
+                @include sp {
+                    max-width: unset;
+                }
+                .itemName {
+                    font-size: FZ(20);
+                    letter-spacing: 0.04em;
+                    align-self: center;
+                    margin-bottom: 1em;
+                    i {
+                        font-size: 1.5em;
+                    }
+                }
+                .headComment {
+                    font-size: FZ(14);
+                    letter-spacing: 0.08em;
+                    line-height: 1.8em;
+                    margin-bottom: 1em;
+                }
+                h4 {
+                    font-size: FZ(16);
+                }
+                dl {
+                    font-size: inherit;
+                    display: grid;
+                    grid-template-columns: auto 1fr;
+                    gap: 0.5em 0;
+                    margin-top: 0.5em;
+                    div {
+                        grid-column: span 2;
+                        display: grid;
+                        grid-template-columns: subgrid;
+                        font-size: inherit;
+                        gap: 0 1em;
+                        dt {
+                            font-size: FZ(16);
+                        }
+                        dd {
+                            font-size: FZ(16);
+                        }
+                    }
+                }
+                .notice {
+                    font-size: FZ(15);
+                    margin-top: 1em;
+                }
+            }
+        }
+    }
+    .blockMiddle {
+        margin-top: 5em;
+        gap: 3em 0;
+        h3 {
+            align-self: center;
+            font-size: FZ(20);
+        }
+        .boxContents {
+            position: relative;
+            font-size: inherit;
+            display: flex;
+            justify-content: space-between;
+            @include sp {
+                flex-direction: column;
+                justify-content: unset;
+                .itemImage {
+                    margin-top: 6vw;
+                }
+            }
+            dl {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                gap: 2em 0;
+                font-size: inherit;
+                div {
+                    font-size: inherit;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.5em 0;
+                    dt {
+                        font-size: FZ(16);
+                    }
+                    dd {
+                        font-size: inherit;
+                        display: flex;
+                        flex-direction: column;
+                        p {
+                            font-size: FZ(15);
+                            letter-spacing: 0.058em;
+                            line-height: 1.8em;
+                        }
+                        span {
+                            font-size: FZ(14);
+                            margin-top: 0.5em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .blockBottom {
+        margin-top: 5em;
+        gap: 1em 0;
+        h3 {
+            align-self: center;
+            font-size: FZ(20);
+        }
+        .boxContents {
+            display: flex;
+            font-size: inherit;
+            gap: 0 3em;
+            @include sp {
+                flex-direction: column;
+                gap: 4vw 0;
+                align-items: center;
+            }
+            .wrapText {
+                display: flex;
+                flex-direction: column;
+                font-size: inherit;
+                gap: 2em 0;
+                p {
+                    font-size: FZ(15);
+                    letter-spacing: 0.08em;
+                    line-height: 1.8em;
+                    text-align: justify;
+                }
+                .itemPrice {
+                    font-size: FZ(20);
+                    span {
+                        font-size: 0.7em;
+                        margin-right: 1em;
+                    }
+                }
+            }
+        }
+    }
+    .blockInfo {
+        margin-top: 5em;
+        display: flex;
+        flex-direction: row;
+        gap: 0 3em;
+        align-items: flex-start;
+        @include sp {
+            flex-direction: column;
+        }
+        dl {
+            width: 50%;
+            position: relative;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            font-size: inherit;
+            border-top: solid 1px #c0c6c9;
+            @include sp {
+                width: 100%;
+            }
+            div {
+                grid-column: span 2;
+                display: grid;
+                grid-template-columns: subgrid;
+                font-size: inherit;
+                gap: 0 3em;
+                padding-block: 1em;
+                border-bottom: solid 1px #c0c6c9;
+                dt {
+                    font-size: FZ(14);
+                }
+                dd {
+                    font-size: inherit;
+                    address {
+                        font-size: FZ(14);
+                        display: flex;
+                        flex-direction: column;
+                        letter-spacing: 0.08em;
+                    }
+                    a {
+                        font-size: FZ(14);
+                        letter-spacing: 0.08em;
+                    }
+                }
+            }
+        }
+        iframe {
+            flex: 1;
+            align-self: stretch;
+            @include sp {
+                display: none;
+            }
+        }
+    }
+    .linkContact {
+        width: 100%;
+        max-width: $articleMaxWidth;
+        position: relative;
+        margin-top: 5em;
+        font-size: FZ(18);
+        background-color: $baseBlack;
+        color: $baseWhite;
+        display: grid;
+        place-content: center;
+        padding-block: 1em;
+        letter-spacing: 0.2em;
+        transition: 0.3s ease-out;
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 3px;
+            background-color: $baseBlack;
+            clip-path: inset(0 50% 0 50%);
+            transition: 0.3s ease-out;
+        }
+        @include hover {
+            background-color: #fff;
+            color: $baseBlack;
+            &::after {
+                clip-path: inset(0);
+                transition-delay: 0.1s;
+            }
+        }
+        @include sp {
+            margin-top: 8vw;
+        }
+    }
+}

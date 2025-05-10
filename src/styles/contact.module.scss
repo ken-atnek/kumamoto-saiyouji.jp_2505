@@ -1,11 +1,13 @@
 @use "variable" as *;
 @use "svg" as *;
-
 .containerContact {
     padding: 8em 2em 5em;
     display: flex;
     flex-direction: column;
     align-items: center;
+    @include sp {
+        padding: 6vw 4vw 25vw;
+    }
     article {
         max-width: 96rem;
         display: flex;
@@ -15,6 +17,9 @@
             font-size: FZ(16);
             letter-spacing: 0.12em;
             line-height: 1.8em;
+            @include sp {
+                padding-inline: unset;
+            }
         }
         a {
             position: relative;

@@ -27,16 +27,16 @@ const Footer = () => {
       </section>
       <section className={styles.blockLink}>
         <nav>
-          <a href="#">
+          <a href="https://www.matusita.net/" target="_blank">
             <Image src={logoMatsushita} alt="松下仏壇店" />
           </a>
-          <a href="#">
+          <a href="https://www.hongwanji.or.jp/" target="_blank">
             <Image src={logoHonganji} alt="本願寺派" />
           </a>
           <a href="#">
             <Image src={logoAizono} alt="あいぞの" />
           </a>
-          <a href="#">
+          <a href="https://www.ochiai-web.co.jp/" target="_blank">
             <Image src={logoOchiai} alt="落合葬儀社" />
           </a>
         </nav>
@@ -47,16 +47,16 @@ const Footer = () => {
             <Link href="/" className={styles.itemLink}>
               ホーム
             </Link>
-            <Link href="#" className={styles.itemLink}>
+            <Link href="/musubu-tsunagu/" className={styles.itemLink}>
               結ぶ・紡ぐ
             </Link>
-            <Link href="#" className={styles.itemLink}>
+            <Link href="/oteramanabi/" className={styles.itemLink}>
               お寺選び
             </Link>
-            <Link href="#" className={styles.itemLink}>
+            <Link href="/noukotsudo/" className={styles.itemLink}>
               納骨堂 無量寿堂
             </Link>
-            <Link href="#" className={styles.itemLink}>
+            <Link href="/contact/" className={styles.itemLink}>
               お問い合わせ
             </Link>
           </nav>
@@ -64,8 +64,8 @@ const Footer = () => {
             <a href="#">
               <Image src={imageLogo} alt="西養寺" />
             </a>
-            <a href="#">
-              <Image src={imageLogoMinori} alt="西養寺" />
+            <a href="https://www.ans.co.jp/n/honideminori/" target="_blank">
+              <Image src={imageLogoMinori} alt="本井手みのり保育園" />
             </a>
             <div className={styles.shopInfo}>
               <address>

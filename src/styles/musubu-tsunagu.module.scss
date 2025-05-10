@@ -1,6 +1,6 @@
 @use "variable" as *;
 @use "svg" as *;
-
+/* stylelint-disable no-descending-specificity */
 .containerMusubu {
     display: flex;
     flex-direction: column;
@@ -10,19 +10,29 @@
         font-size: inherit;
         display: flex;
         justify-content: center;
-        background: url(../assets/images/musubu-tsunagu/head.webp) no-repeat
+        background: url("../assets/images/musubu-tsunagu/head.webp") no-repeat
             center center / cover;
         padding-block: 3em;
+        @include sp {
+            padding-block: 6vw;
+        }
         h3 {
             font-size: FZ(30);
             display: flex;
             flex-direction: column;
             gap: 0.2em 0;
-            writing-mode: vertical-rl; //縦書き
-            text-orientation: upright; //縦書き英数回転
-            font-feature-settings: initial; //左詰め解除
+            writing-mode: vertical-rl; // 縦書き
+            text-orientation: upright; // 縦書き英数回転
+            font-feature-settings: initial; // 左詰め解除
             color: $baseWhite;
             letter-spacing: 0.058em;
+            opacity: 0;
+            transition: 1s cubic-bezier(0, 0.55, 0.45, 1);
+            translate: 0 -100%;
+            &.is-active {
+                opacity: 1;
+                translate: 0;
+            }
         }
     }
     .h2Sidebar {
@@ -32,6 +42,10 @@
         letter-spacing: 0.12em;
         line-height: 1.8em;
         text-align: justify;
+        @include sp {
+            margin-inline: 4vw;
+            margin-top: 6vw;
+        }
     }
     .boxImageList {
         max-width: $articleMaxWidth;
@@ -42,6 +56,13 @@
         padding-bottom: 2em;
         gap: 0 3em;
         margin-inline: 2em;
+        @include sp {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2vw;
+            margin-inline: 4vw;
+            margin-top: 6vw;
+            margin-bottom: 6vw;
+        }
         img {
             aspect-ratio: 1.33;
             object-fit: cover;
@@ -51,10 +72,16 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 8em 2em 8em;
+        padding: 8em 2em;
+        @include sp {
+            padding: 6vw 4vw;
+        }
         h3 {
             font-size: FZ(30);
             letter-spacing: 0.12em;
+            @include sp {
+                font-size: FZ(24);
+            }
         }
         .workList {
             position: relative;
@@ -64,12 +91,22 @@
             max-width: 76rem;
             margin-top: 3em;
             gap: 5em 0;
+            @include sp {
+                max-width: unset;
+            }
             li {
                 font-size: inherit;
                 display: flex;
                 gap: 0 2em;
+                @include sp {
+                    flex-direction: column;
+                    gap: 4vw 0;
+                }
                 &:nth-of-type(2n) {
                     flex-direction: row-reverse;
+                    @include sp {
+                        flex-direction: column;
+                    }
                 }
                 figure {
                     position: relative;
@@ -79,6 +116,9 @@
                     align-items: center;
                     gap: 1em 0;
                     width: 50%;
+                    @include sp {
+                        width: 100%;
+                    }
                     .itemImage {
                         aspect-ratio: 1.5;
                         object-fit: cover;
@@ -104,20 +144,38 @@
             gap: 5em 0;
             max-width: $articleMaxWidth;
             margin-top: 8em;
+            @include sp {
+                grid-template-columns: unset;
+                grid-auto-flow: row;
+                gap: 14vw 0;
+            }
             li {
                 font-size: inherit;
                 display: grid;
                 grid-column: span 2;
                 grid-template-columns: subgrid;
-                gap: 2em 2em;
+                gap: 2em;
+                @include sp {
+                    grid-column: unset;
+                    grid-template-columns: unset;
+                    grid-auto-flow: row;
+                    gap: 4vw 0;
+                }
                 .itemName {
                     grid-column: span 2;
                     text-align: center;
                     font-size: FZ(20);
                     letter-spacing: 0.08em;
+                    @include sp {
+                        grid-column: unset;
+                    }
                 }
                 .itemImage {
                     width: 30rem;
+                    @include sp {
+                        width: 60vw;
+                        justify-self: center;
+                    }
                     img {
                         width: 100%;
                         aspect-ratio: 1;
@@ -130,6 +188,11 @@
                     text-align: justify;
                     letter-spacing: 0.12em;
                     line-height: 1.8em;
+                    @include sp {
+                        font-size: FZ(16);
+                        letter-spacing: 0.08em;
+                        line-height: 1.6em;
+                    }
                 }
             }
         }

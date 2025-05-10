@@ -10,15 +10,26 @@ import styles from '@/styles/components/common/PageTitle.module.scss';
 type PageTitleProps = {
   titleJp: string;
   titleEn: string;
+  titleJpSpan?: string;
+  customClass?: string;
 };
 
-const PageTitle = ({ titleJp, titleEn }: PageTitleProps) => {
+const PageTitle = ({
+  titleJp,
+  titleJpSpan,
+  titleEn,
+  customClass,
+}: PageTitleProps) => {
   return (
-    <section className={styles.containerPageTitle}>
+    <section className={`${styles.containerPageTitle} ${customClass || ''}`}>
+      {' '}
       <article>
         <div>
-          <h2>{titleJp}</h2>
-          <span>{titleEn}</span>
+          <h2>
+            {titleJp}
+            {titleJpSpan && <span>{titleJpSpan}</span>}
+          </h2>
+          {titleEn && <span>{titleEn}</span>}
         </div>
       </article>
     </section>

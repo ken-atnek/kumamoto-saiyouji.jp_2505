@@ -1,0 +1,108 @@
+@use "variable" as *;
+@use "svg" as *;
+/* stylelint-disable no-descending-specificity */
+.containerOteramanabi {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .blockHead {
+        width: 100%;
+        font-size: inherit;
+        display: flex;
+        justify-content: center;
+        background: url("../assets/images/oteramanabi/head.webp") no-repeat
+            center center / cover;
+        padding-block: 3em;
+        h3 {
+            font-size: FZ(30);
+            display: flex;
+            flex-direction: column;
+            gap: 0.2em 0;
+            writing-mode: vertical-rl; // 縦書き
+            text-orientation: upright; // 縦書き英数回転
+            font-feature-settings: initial; // 左詰め解除
+            color: $baseWhite;
+            letter-spacing: 0.058em;
+            opacity: 0;
+            transition: 0.8s cubic-bezier(0, 0.55, 0.45, 1);
+            translate: 50vw;
+            &.is-active {
+                opacity: 1;
+                translate: 0;
+            }
+            span {
+                text-indent: 3em;
+            }
+        }
+    }
+    .headText {
+        font-size: FZ(15);
+        line-height: 1.8em;
+        max-width: 70rem;
+        margin-top: 3em;
+        letter-spacing: 0.12em;
+        @include sp {
+            margin-inline: 4vw;
+            margin-top: 6vw;
+            margin-bottom: 20vw;
+        }
+    }
+}
+.containerMiddle,
+.containerBottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-inline: 2em;
+    @include sp {
+        padding-inline: 4vw;
+    }
+    article {
+        display: flex;
+        gap: 0 3em;
+        max-width: $articleMaxWidth;
+        @include sp {
+            flex-direction: column;
+            gap: 4vw 0;
+            .boxImage {
+                order: -1;
+            }
+        }
+        .boxImage {
+            opacity: 0;
+            transition: 1s cubic-bezier(0, 0.55, 0.45, 1);
+            translate: 50vw;
+        }
+        p {
+            font-size: FZ(15);
+            text-align: justify;
+            letter-spacing: 0.08em;
+            line-height: 1.8em;
+            flex: 1;
+            opacity: 0;
+            transition: 1s cubic-bezier(0, 0.55, 0.45, 1);
+            translate: -50vw;
+        }
+        &.is-active {
+            .boxImage,
+            p {
+                opacity: 1;
+                translate: 0;
+            }
+        }
+    }
+}
+.containerMiddle {
+    @include sp {
+        margin-bottom: 20vw;
+    }
+    .boxImage {
+        max-width: 72rem;
+    }
+}
+.containerBottom {
+    margin-bottom: 5em;
+    .boxImage {
+        max-width: 55rem;
+    }
+}

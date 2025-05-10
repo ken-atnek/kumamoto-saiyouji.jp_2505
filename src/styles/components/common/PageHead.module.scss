@@ -5,6 +5,9 @@
     flex-direction: column;
     align-items: center;
     padding: 9rem 3rem 3rem;
+    @include sp {
+        padding: unset;
+    }
     article {
         display: flex;
         align-items: center;
@@ -14,6 +17,10 @@
         background-position: center center;
         padding-inline: 2em;
         justify-content: center;
+        @include sp {
+            height: 30vw;
+            padding-inline: 4vw;
+        }
         h2 {
             font-size: FZ(36);
             color: $baseWhite;
@@ -21,6 +28,9 @@
             display: flex;
             max-width: $articleMaxWidth;
             padding-top: 1.4em;
+            @include sp {
+                padding-top: 1vw;
+            }
         }
     }
     .breadcrumb {
@@ -31,6 +41,11 @@
         align-items: center;
         justify-content: flex-end;
         margin-top: 1em;
+        @include sp {
+            margin-top: 2vw;
+            max-width: unset;
+            padding-right: 4vw;
+        }
         .itemLink {
             font-size: FZ(14);
             letter-spacing: 0.12em;

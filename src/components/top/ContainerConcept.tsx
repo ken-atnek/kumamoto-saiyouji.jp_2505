@@ -25,7 +25,7 @@ const ContainerConcept = () => {
               <p>
                 西養寺は天正12年（1584年）に開基以来、400年以上にわたって御仏の心と共に地域のよりどころとして存在してきました。
               </p>
-              <Link href="#" className={styles.itemLink}>
+              <Link href="/musubu-tsunagu/" className={styles.itemLink}>
                 詳細はこちら
               </Link>
             </div>
@@ -39,7 +39,7 @@ const ContainerConcept = () => {
               <p>
                 西養寺では日常の暮らしや結婚式や葬儀などの人生の節目においても仏様のお教えに沿った形でお手伝いも行っております。これからも仏様の教えを地域の方と共に受け継いでいきます。
               </p>
-              <Link href="#" className={styles.itemLink}>
+              <Link href="/musubu-tsunagu/" className={styles.itemLink}>
                 詳細はこちら
               </Link>
             </div>
@@ -53,7 +53,7 @@ const ContainerConcept = () => {
               <p>
                 お寺は地域の人にとって困りごとがある時に頼れるような、身近な場所です。気軽に集い、仏様の教えに触れらる。そのような機会を数多く設けております。
               </p>
-              <Link href="#" className={styles.itemLink}>
+              <Link href="/oteramanabi/" className={styles.itemLink}>
                 詳細はこちら
               </Link>
             </div>
@@ -69,7 +69,7 @@ const ContainerConcept = () => {
               <p>
                 西養寺では日常の暮らしや結婚式や葬儀などの人生の節目においても仏様のお教えに沿った形でお手伝いも行っております。これからも仏様の教えを地域の方と共に受け継いでいきます。
               </p>
-              <Link href="#" className={styles.itemLink}>
+              <Link href="/noukotsudo/" className={styles.itemLink}>
                 詳細はこちら
               </Link>
             </div>

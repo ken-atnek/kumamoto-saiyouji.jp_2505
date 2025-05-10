@@ -9,7 +9,10 @@
     top: 0;
     left: 0;
     z-index: 5;
-
+    @include sp {
+        height: unset;
+        gap: unset;
+    }
     h1 {
         width: 50%;
         width: 50rem;
@@ -18,7 +21,14 @@
         align-items: center;
         justify-content: center;
         @include sp {
-            width: 45vw;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 15vw;
+            img {
+                width: 50vw;
+            }
         }
     }
     nav {
@@ -30,20 +40,42 @@
         @include sp {
             flex-direction: column;
             gap: 4vw 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            background-color: $baseBlack;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            margin-top: unset;
+            margin-right: unset;
+            padding-top: 30vw;
+            transition: 0.3s ease-out;
+            translate: 100vw;
+            opacity: 0;
+            &.is-open {
+                translate: unset;
+                opacity: 1;
+            }
         }
         .itemLink {
             font-size: FZ(16);
             background-color: #fff;
             letter-spacing: 0.2em;
             transition: 0.3s ease-out;
-            writing-mode: vertical-rl; //縦書き
-            text-orientation: upright; //縦書き英数回転
-            font-feature-settings: initial; //左詰め解除
+            writing-mode: vertical-rl; // 縦書き
+            text-orientation: upright; // 縦書き英数回転
+            font-feature-settings: initial; // 左詰め解除
             padding-block: 0.5em;
             text-align: center;
             &.is-active {
                 background-color: $baseBlack;
                 color: #fff;
+            }
+            @include sp {
+                background-color: transparent;
+                color: #fff;
+                writing-mode: unset;
             }
         }
     }

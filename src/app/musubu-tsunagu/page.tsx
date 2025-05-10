@@ -4,6 +4,8 @@
  * Created: 2025-05-09
  * Last updated: 2025-05-09
  * ======================================= */
+'use client';
+import { useScrollTrigger } from '@/hooks/useScrollTrigger';
 import React from 'react';
 import bgImage from '@/assets/images/common/title-musubu.webp';
 import PageHead from '@/components/common/PageHead';
@@ -22,7 +24,8 @@ import Staff02 from '@/assets/images/musubu-tsunagu/staff02.webp';
 import Staff03 from '@/assets/images/musubu-tsunagu/staff03.webp';
 import Image from 'next/image';
 import { useMemo } from 'react';
-export default function Contact() {
+export default function MusubuTsunagu() {
+  const triggerA = useScrollTrigger<HTMLDivElement>();
   const workListData = useMemo(
     () => [
       {
@@ -79,9 +82,9 @@ export default function Contact() {
     <>
       <PageHead title="結ぶ・紡ぐ" backgroundImage={bgImage} />
       <PageTitle titleJp="西養寺について" titleEn="about" />
-      <section className={styles.containerMusubu}>
+      <section className={styles.containerMusubu} ref={triggerA.ref}>
         <div className={styles.blockHead}>
-          <h3>
+          <h3 className={`${triggerA.isVisible ? styles['is-active'] : ''}`}>
             地域にあること​<span>開寺以降の歴史​</span>
           </h3>
         </div>

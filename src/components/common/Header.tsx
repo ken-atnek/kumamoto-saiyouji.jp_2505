@@ -56,7 +56,12 @@ const Header = () => {
       <h1>
         <Image src={imageLogo} alt="西養寺" />
       </h1>
-      <nav>
+      <nav
+        id="mobileMenu"
+        className={`${isOpen ? styles['is-open'] : ''} ${
+          !isOpen ? styles.closing : ''
+        }`}
+      >
         <Link href="/" className={styles.itemLink} onClick={closeMenu}>
           ホーム
         </Link>
@@ -67,10 +72,18 @@ const Header = () => {
         >
           結ぶ・紡ぐ
         </Link>
-        <Link href="#" className={styles.itemLink} onClick={closeMenu}>
-          お寺選び
+        <Link
+          href="/oteramanabi/"
+          className={`${styles.itemLink} ${pathname === '/oteramanabi/' ? styles['is-active'] : ''}`}
+          onClick={closeMenu}
+        >
+          お寺学び
         </Link>
-        <Link href="#" className={styles.itemLink} onClick={closeMenu}>
+        <Link
+          href="/noukotsudo/"
+          className={`${styles.itemLink} ${pathname === '/noukotsudo/' ? styles['is-active'] : ''}`}
+          onClick={closeMenu}
+        >
           納骨堂 無量寿堂
         </Link>
         <Link

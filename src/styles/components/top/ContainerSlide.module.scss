@@ -1,10 +1,12 @@
 @use "variable" as *;
 @use "svg" as *;
-
 .containerSlide {
     position: relative;
     width: 100vw;
     height: 100vh;
+    @include sp {
+        height: 50vw;
+    }
     .wrapTitle {
         display: grid;
         place-content: center;
@@ -16,6 +18,9 @@
         border-right: 3rem solid;
         border-bottom: 3rem solid;
         border-color: $baseLightGray;
+        @include sp {
+            border: unset;
+        }
     }
     .itemTitle {
         display: flex;
@@ -24,10 +29,13 @@
         color: $baseWhite;
         font-size: FZ(56);
         z-index: +10;
-        @include ManyoGyoshoStd;
         gap: 0.1em 0;
+        @include ManyoGyoshoStd;
         span {
             font-size: 0.67em;
+        }
+        @include sp {
+            font-size: FZ(42);
         }
     }
     article {
